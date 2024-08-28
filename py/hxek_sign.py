@@ -1,10 +1,9 @@
-# !/usr/bin/python3
-# -- coding: utf-8 --
-# -------------------------------
-# cron "5 11 * * *" script-path=xxx.py,tag=匹配cron用
-# const $ = new Env('鸿星尔克官方会员中心小程序')
-#如果CHERWIN_TOOLS.py下载失败，可以直接将本文件夹中的对应文件，上传到青龙的同一个文件夹下
-
+"""
+任务名称
+name: hxek签到
+定时规则
+cron: 1 8 * * *
+"""
 import os
 import random
 import time

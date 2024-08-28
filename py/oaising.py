@@ -1,4 +1,9 @@
-# const $ = new Env('OAI签到')
+"""
+任务名称
+name: OAI签到
+定时规则
+cron: 2 8 * * *
+"""
 import requests
 import os
 
