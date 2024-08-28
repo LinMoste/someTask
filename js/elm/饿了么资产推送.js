@@ -161,7 +161,7 @@ async function _0x1df2c9(_0x396c11, _0x1e34ac) {
             if (!_0x1ea0a1 && _0x266ff8.statusCode == 200) {
                 try {
                     const _0x3cb15f = JSON.parse(_0x582388);
-                    const _0x470a8b = JSON.parse(_0x3cb15f.data.data);
+                    const _0x470a8b = JSON.parse(_0x3cb15f.data);
                     _0x46952e(_0x470a8b);
                 } catch (_0x1d36db) {
                     console.log(_0x582388);
@@ -233,13 +233,7 @@ async function _0xf7ccac(_0x1e0e27, _0x54f7f5) {
 }
 async function _0x378f6c(_0x429356, _0x16a72b) {
     const _0x220a27 = getCookieMap(_0x429356);
-    if (!_0x220a27.has("wxUid")) {
-        console.log("没有获取到推送 uid，不推送消息\n");
-    } else {
-        await sendNotify("饿了么资产推送", _0x16a72b, {
-            uid: _0x220a27.get("wxUid")
-        });
-    }
+    await sendNotify("饿了么资产推送", _0x16a72b);
 }
 async function _0x163ae7() {
     await validateCarmeWithType(_0x46e8ae, 1);
@@ -258,7 +252,7 @@ async function _0x163ae7() {
         await checkCarmeCount(_0x46e8ae, _0x4feeeb, _0xf58a19);
         console.log("******开始【饿了么账号", _0x3913fc + 1, "】", _0x17b596.username, "*********");
         let _0x42bffc = await _0x1fb425(_0x1e1848);
-        if (_0x42bffc != null) {
+        if (_0x42bffc === null) {
             _0x42bffc = _0x55733f;
         } else {
             _0x42bffc = _0x42bffc / 100;
@@ -280,15 +274,15 @@ async function _0x163ae7() {
         if (!_0x30b429) {
             _0x30b429 = _0x55733f;
         }
-        var _0x4b0682 = await _0x2e425a(_0x1e1848);
-        if (!_0x4b0682) {
-            _0x4b0682 = _0x55733f;
-        }
+        // var _0x4b0682 = await _0x2e425a(_0x1e1848);
+        // if (!_0x4b0682) {
+        //     _0x4b0682 = _0x55733f;
+        // }
         console.log("乐园币：" + _0x30b429);
-        console.log("当前乐园币：" + _0x4b0682);
+        // console.log("当前乐园币：" + _0x4b0682);
         console.log("总吃货豆：" + _0x524645);
         console.log("余额：" + _0x42bffc);
-        var _0x3ec5bd = "###资产推送\n" + _0x2c5f85 + "|" + _0x17b596.username + "|" + _0x30b429 + "/" + _0x4b0682 + "|" + _0x524645 + "|" + _0x42bffc + "|";
+        var _0x3ec5bd = "###资产推送\n" + _0x2c5f85 + "|" + _0x17b596.username + "|" + _0x30b429 + "|" + _0x524645 + "|" + _0x42bffc + "|";
         await _0x378f6c(_0x1e1848, _0x3ec5bd);
         await wait(10);
     }
