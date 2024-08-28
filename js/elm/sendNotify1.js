@@ -19,6 +19,9 @@ async function sendNotify(
     ]);
 
 }
+module.exports = {
+    sendNotify
+};
 
 
 

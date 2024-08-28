@@ -12,7 +12,7 @@ function _0x533bff(_0x24e93b = 0, _0x11eeb2 = 100) {
 const _0x5f1259 = _0x57ecf6[_0x533bff(0, _0x57ecf6.length - 1)];
 async function _0x5670f4(_0x3d8696, _0x37d5b1) {
     const _0xfffd49 = _0x10d424(_0x3d8696);
-    !_0xfffd49.has("wxUid") ? console.log("没有获取到推送 uid，不推送消息\n") : await sendNotify("饿了么抢券成功推送", _0x37d5b1, {
+   await sendNotify("饿了么抢券成功推送", _0x37d5b1, {
         "uid": _0xfffd49.get("wxUid")
     });
 }
@@ -259,7 +259,7 @@ function _0x10d424(_0x18bf21) {
 }
 async function _0x40ed21(_0x313041, _0x5a8d08) {
     const _0x45affd = _0x10d424(_0x313041);
-    !_0x45affd.has("wxUid") ? console.log("没有获取到推送 uid，不推送消息\n") : await sendNotify("登录失效通知", "### 通知 \n 备注为：" + _0x5a8d08 + "的饿了么登录已失效，请重新登录", {
+    !await sendNotify("登录失效通知", "### 通知 \n 备注为：" + _0x5a8d08 + "的饿了么登录已失效，请重新登录", {
         "uid": _0x45affd.get("wxUid")
     });
 }
