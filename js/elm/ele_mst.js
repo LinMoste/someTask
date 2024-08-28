@@ -1,4 +1,10 @@
-const $ = new Env('饿了么美食烫');
+/**
+ * 任务名称
+ * name: 饿了么美食摊
+ * 定时规则
+ * cron: 8 9 * * *
+ */
+
 const {
     getToken,
     sign,

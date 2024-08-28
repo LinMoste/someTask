@@ -1,4 +1,9 @@
-const $ = new Env('饿了么离线简历');
+/**
+ * 任务名称
+ * name: 饿了么合成甜蜜蜜
+ * 定时规则
+ * cron: 4 9 * * *
+ */
 const {
     sign,
     getToken,

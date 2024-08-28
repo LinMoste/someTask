@@ -1,10 +1,11 @@
+
 /**
- * 变量：elmck: 必填，账号cookie
+ * 任务名称
+ * name: 饿了么连连看
+ * 定时规则
  * cron: 7 0,6,12,18,22 * * *
- * 修复连连看
  */
 
-const $ = new Env("修复连连看");
 const {
     "getToken": getToken,
     "checkCk": checkCk,

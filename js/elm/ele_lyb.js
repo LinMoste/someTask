@@ -1,4 +1,10 @@
-const $ = new Env('饿了么乐园币');
+/**
+ * 任务名称
+ * name: 饿了么乐园币
+ * 定时规则
+ * cron: 8 9 * * *
+ */
+
 const {
     sign,
     getToken,

@@ -1,4 +1,9 @@
-const $ = new Env('饿了么2048');
+/**
+ * 任务名称
+ * name: 饿了么2048
+ * 定时规则
+ * cron: 1 9 * * *
+ */
 const {
     getToken,
     sign,
