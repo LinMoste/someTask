@@ -1,3 +1,4 @@
+# const $ = new Env('OAI签到')
 import requests
 import os
 
