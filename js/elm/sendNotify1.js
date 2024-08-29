@@ -9,7 +9,6 @@ async function sendNotify(
     if (process.env.pushDesc){
         author = '\n\n' + process.env.pushDesc;
     }
-    desp += author; //增加作者信息，防止被贩卖等
     await Promise.all([
         // serverNotify(text, desp), //微信server酱
         // pushPlusNotify(text, desp), //pushplus(推送加)
