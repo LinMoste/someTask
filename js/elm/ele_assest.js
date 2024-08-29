@@ -341,18 +341,18 @@ async function _0x163ae7() {
       _0x30b429 = _0x55733f;
     }
 
-    var _0x4b0682 = await _0x2e425a(_0x1e1848);
-
-    if (!_0x4b0682) {
-      _0x4b0682 = _0x55733f;
-    }
+    // var _0x4b0682 = await _0x2e425a(_0x1e1848);
+    //
+    // if (!_0x4b0682) {
+    //   _0x4b0682 = _0x55733f;
+    // }
 
     console.log("乐园币：" + _0x30b429);
-    console.log("当前乐园币：" + _0x4b0682);
+    // console.log("当前乐园币：" + _0x4b0682);
     console.log("总吃货豆：" + _0x524645);
     console.log("余额：" + _0x42bffc);
 
-    var _0x3ec5bd = "###资产推送\n" + _0x2c5f85 + "|" + _0x17b596.encryptMobile + "|" + _0x30b429 + "/" + _0x4b0682 + "|" + _0x524645 + "|" + _0x42bffc + "|";
+    var _0x3ec5bd = "###资产推送\n" + _0x2c5f85 + "|" + _0x17b596.encryptMobile + "|" + _0x30b429 + "|" + _0x524645 + "|" + _0x42bffc + "|";
 
     await _0x378f6c(_0x1e1848, _0x3ec5bd);
     await wait(10);

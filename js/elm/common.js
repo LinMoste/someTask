@@ -558,7 +558,7 @@ async function _0x13b336(_0x52aa36, _0x7702a3, _0x65526d, _0x30eead, _0x40f9cf, 
     let _0x3107f4 = _0x5a5a78(_0x52aa36),
         _0x6c1932 = _0x3107f4.get("deviceId") || _0x34bc10(44),
         _0x4cb5fb = _0x3107f4.get("utdid") || _0x34bc10(24),
-        _0x3efe34 = _0x3107f4.get("unb");
+        _0x3efe34 = _0x3107f4.get("unb") || _0x34bc10(24);
 
     if (!_0x3efe34) {
         console.log("请检查 ck 是否有cookie2 unb USERID SID");
