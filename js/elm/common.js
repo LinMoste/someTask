@@ -28,13 +28,10 @@ const _0x25790f = _0x731544[_0x5429db(0, _0x731544.length - 1)];
 async function _0xe1593e(_0x455896, _0x22c427) {
     const _0x5e5fcc = _0x5a5a78(_0x455896);
 
-    if (!_0x5e5fcc.has("wxUid")) {
-        console.log("没有获取到推送 uid，不推送消息\n");
-    } else {
+
         await _0x255ab6("饿了么抢券成功推送", _0x22c427, {
             uid: _0x5e5fcc.get("wxUid")
         });
-    }
 }
 
 const _0x354358 = async (_0x4104ba, _0x24dc75, _0x1097f6 = 1, _0x185488 = 5) => {
