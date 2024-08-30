@@ -11,21 +11,8 @@ from datetime import datetime, time as times
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-# import CHERWIN_TOOLS
-# 禁用安全请求警告
+import custom_notify as notify
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-#
-IS_DEV = False
-if os.path.isfile('DEV_ENV.py'):
-    import DEV_ENV
-
-    IS_DEV = True
-if os.path.isfile('notify.py'):
-    from notify import send
-
-    print("加载通知服务成功！")
-else:
-    print("加载通知服务失败!")
 send_msg = ''
 one_msg = ''
 
@@ -177,9 +164,9 @@ class RUN:
             return False
 
     def sendMsg(self):
-        if self.send_UID:
-            push_res = CHERWIN_TOOLS.wxpusher(self.send_UID, one_msg, APP_NAME)
-            print(push_res)
+        notify.sendNotify(self.send_UID,one_msg)
+
+
 
 
 def random_delay(min_delay=1, max_delay=5):
@@ -194,36 +181,11 @@ def random_delay(min_delay=1, max_delay=5):
     time.sleep(delay)
 
 
-def down_file(filename, file_url):
-    print(f'开始下载：{filename}，下载地址：{file_url}')
-    try:
-        response = requests.get(file_url, verify=False, timeout=10)
-        response.raise_for_status()
-        with open(filename + '.tmp', 'wb') as f:
-            f.write(response.content)
-        print(f'【{filename}】下载完成！')
-
-        # 检查临时文件是否存在
-        temp_filename = filename + '.tmp'
-        if os.path.exists(temp_filename):
-            # 删除原有文件
-            if os.path.exists(filename):
-                os.remove(filename)
-            # 重命名临时文件
-            os.rename(temp_filename, filename)
-            print(f'【{filename}】重命名成功！')
-            return True
-        else:
-            print(f'【{filename}】临时文件不存在！')
-            return False
-    except Exception as e:
-        print(f'【{filename}】下载失败：{str(e)}')
-        return False
 
 
 def import_Tools():
-    global CHERWIN_TOOLS, ENV, APP_INFO, TIPS, TIPS_HTML, AuthorCode
     import CHERWIN_TOOLS
+    global CHERWIN_TOOLS, ENV, APP_INFO, TIPS, TIPS_HTML, AuthorCode
     ENV, APP_INFO, TIPS, TIPS_HTML, AuthorCode = CHERWIN_TOOLS.main(APP_NAME, local_script_name, ENV_NAME,
                                                                     local_version)
 
@@ -256,20 +218,7 @@ export SCRIPT_UPDATE = 'False' 关闭脚本自动更新，默认开启
 ''')
     local_script_name = os.path.basename(__file__)
     local_version = '2024.06.01'
-    if IS_DEV:
-        import_Tools()
-    else:
-        if os.path.isfile('CHERWIN_TOOLS.py'):
-            import_Tools()
-        else:
-            if down_file('CHERWIN_TOOLS.py', 'https://github.moeyy.xyz/https://github.com/CHERWING/CHERWIN_SCRIPTS/raw/main/CHERWIN_TOOLS.py'):
-                print('脚本依赖下载完成请重新运行脚本')
-                import_Tools()
-            else:
-                print(
-                    '脚本依赖下载失败，请到https://github.com/CHERWING/CHERWIN_SCRIPTS/raw/main/CHERWIN_TOOLS.py下载最新版本依赖')
-                exit()
-    print(TIPS)
+    import_Tools()
     token = ''
     token = ENV if ENV else token
     if not token:

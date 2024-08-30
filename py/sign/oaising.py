@@ -6,16 +6,9 @@ cron: 2 8 * * *
 """
 import requests
 import os
-
+import custom_notify as notify
 
 url = "https://oai.itsfurry.com/api/user/signing"
-EnableNotify = False
-try:
-    from notify import send
-    EnableNotify = True
-    print("当前脚本在青龙面板中运行")
-except ImportError:
-    print("当前脚本不在青龙面板中运行")
 
 
 def reqSign():
@@ -52,17 +45,16 @@ def reqSign():
     try:
         response = requests.post(url, json=data, headers=headers)
         print("状态码:", response.status_code)
-        if EnableNotify:
-            if response.status_code == 200 :
-                send("签到成功","")
-            else:
-                send("签到失败",response.text)
+        if response.status_code == 200:
+            notify.sendNotify("签到成功", "")
+        else:
+            notify.sendNotify("签到失败", response.text)
         print("响应内容:", response.text)
 
     except requests.exceptions.RequestException as e:
         print("请求失败:", e)
-        if EnableNotify:
-            send("鸿星尔克签到失败",str(e))
+        notify.sendNotify("oai签到失败", str(e))
+
 
 if __name__ == '__main__':
     reqSign()
