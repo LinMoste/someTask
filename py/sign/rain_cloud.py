@@ -32,7 +32,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import logging
 import json
-from sign import custom_notify as notify
+import custom_notify as notify
 import warnings
 
 warnings.filterwarnings('ignore')

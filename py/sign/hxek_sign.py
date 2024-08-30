@@ -10,7 +10,7 @@ import time
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-from sign import custom_notify as notify
+import custom_notify as notify
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 send_msg = ''

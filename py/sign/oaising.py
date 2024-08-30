@@ -6,7 +6,7 @@ cron: 2 8 * * *
 """
 import requests
 import os
-from sign import custom_notify as notify
+import custom_notify as notify
 
 url = "https://oai.itsfurry.com/api/user/signing"
 
