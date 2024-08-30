@@ -7,11 +7,11 @@ cron: 1 8 * * *
 import os
 import random
 import time
-from datetime import datetime, time as times
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-import custom_notify as notify
+from sign import custom_notify as notify
+
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 send_msg = ''
 one_msg = ''
